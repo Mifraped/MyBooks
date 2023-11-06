@@ -3,7 +3,7 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #FBEAFF;
+    background-color: #F9F871;
     height: 500px;
     width: 500px;
     padding: 50px;
@@ -30,6 +30,6 @@
         width: 150px;
         border-radius: 5px;
         border: none;
-        background-color: #845EC2;
+        background-color: #D65DB1;
         cursor: pointer;
     }
