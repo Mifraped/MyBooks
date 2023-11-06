@@ -1,0 +1,23 @@
+.contPrinc{
+    display: flex;
+    align-items: center;
+    height: 100px;
+    background-color: var(--morado);
+    font-family: var(--letra);
+    padding-left: 75px;
+    padding-right: 200px;
+}
+    .contTitul{
+        width: 50%;
+    }
+    .contEnlaces{
+        width: 50%;
+        display: flex;
+        justify-content: end;
+        gap: 50px;
+    }
+        a{
+            font-size: 20px;
+            font-weight: 600;
+            cursor: pointer;
+        }
