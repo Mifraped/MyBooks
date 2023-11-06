@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     height: 100px;
-    background-color: var(--morado);
+    background-color: #FF9671;
     font-family: var(--letra);
     padding-left: 75px;
     padding-right: 200px;
