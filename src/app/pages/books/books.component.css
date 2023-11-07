@@ -1,0 +1,25 @@
+.contenedor{
+    height: 100vh;
+    background-image: url("../../../assets/img/pngtree-large-library-has-a-ladder-picture-image_2574110.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 100px;
+    padding: 75px;
+}
+.card{
+    background-color: var(--grisTrans);
+}
+    .contFoto{
+        min-height: 250px !important;
+    }
+    div.foto{
+        max-width: 50%;
+    }
+    h1{
+        font-size: 75px;
+        background-color: rgba(255, 255, 255, 0.149);
+    }
