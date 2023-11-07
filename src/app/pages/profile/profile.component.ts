@@ -15,9 +15,10 @@ export class ProfileComponent {
   public imprimeNombre(): void{
     console.log(this.defaultUser.name);
   }
-  public editaUsuario(nombre: HTMLInputElement, apellidos: HTMLInputElement, correo: HTMLInputElement): void{
-    this.defaultUser.name = nombre.value
-    this.defaultUser.last_name = apellidos.value
-    this.defaultUser.email = correo.value    
+  public editaUsuario(nomInput: HTMLInputElement, apelInput: HTMLInputElement, corrInput: HTMLInputElement, fotoInput: HTMLInputElement): void{
+    this.defaultUser.name = nomInput.value
+    this.defaultUser.last_name = apelInput.value
+    this.defaultUser.email = corrInput.value
+    this.defaultUser.photo =  fotoInput.value   
   }
 }
