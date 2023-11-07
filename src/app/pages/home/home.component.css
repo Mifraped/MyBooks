@@ -9,6 +9,7 @@
     height: 100vh;
     background-image: url("../../../assets/img/pngtree-large-library-has-a-ladder-picture-image_2574110.jpg");
     background-repeat: no-repeat;
+    background-attachment: fixed;
     background-size: cover;
 }
 h1{
