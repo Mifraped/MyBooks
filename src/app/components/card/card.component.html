@@ -10,7 +10,7 @@
         <h6 class="card-text ms-3">{{bookPadre.author}}</h6>
         <h6 class="card-text ms-3">{{bookPadre.type}}</h6>
         <h6 class="card-text ms-3">{{bookPadre.id_book}}</h6>
-        <h6 class="card-text ms-3">{{bookPadre.id_user}}</h6>
+        <h6 class="card-text ms-3">{{bookPadre.id_user | ref}}</h6>
         <h6 class="card-text align-self-center mt-1">{{bookPadre.price}} €</h6>
         <a [ngClass]="even ? 'btn btn-success' : 'btn btn-danger'">Comprar</a>
     </div>
