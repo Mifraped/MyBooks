@@ -19,6 +19,6 @@ export class ProfileComponent {
     this.defaultUser.name = nomInput.value
     this.defaultUser.last_name = apelInput.value
     this.defaultUser.email = corrInput.value
-    this.defaultUser.photo =  fotoInput.value   
+    this.defaultUser.photo = fotoInput.value    
   }
 }
