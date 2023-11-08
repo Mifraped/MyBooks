@@ -11,7 +11,7 @@
                     <h5 class="card-title text-black fw-bold fs-5 text-center mb-3">{{libro.title}}</h5>
                     <h6 class="card-text ms-3">{{libro.author}}</h6>
                     <h6 class="card-text ms-3">{{libro.type}}</h6>
-                    <h6 class="card-text ms-3">{{libro.id_book}}</h6>
+                    <h6 class="card-text ms-3">{{libro.id_book | ref}}</h6>
                     <h6 class="card-text ms-3">{{libro.id_user}}</h6>
                     <h6 class="card-text align-self-center mt-1">{{libro.price}} €</h6>
                     <a [ngClass]="even ? 'btn btn-success' : 'btn btn-danger'">Comprar</a>
