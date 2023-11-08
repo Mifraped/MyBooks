@@ -1,22 +1,7 @@
 <div class="contPrinc">
     <div class="contTarg">
         <ng-container *ngIf="books.length > 0; else esFalso">
-            <div class="card" style="width: 18rem;" *ngFor="let libro of books; let even = even">
-                <div class="contFoto d-flex justify-content-center align-items-center">
-                    <div class="foto w-50">
-                        <img src="{{libro.photo}}" class="card-img-top" alt="Img">
-                    </div>
-                </div>
-                <div class="card-body text-light d-flex flex-column">
-                    <h5 class="card-title text-black fw-bold fs-5 text-center mb-3">{{libro.title}}</h5>
-                    <h6 class="card-text ms-3">{{libro.author}}</h6>
-                    <h6 class="card-text ms-3">{{libro.type}}</h6>
-                    <h6 class="card-text ms-3">{{libro.id_book | ref}}</h6>
-                    <h6 class="card-text ms-3">{{libro.id_user}}</h6>
-                    <h6 class="card-text align-self-center mt-1">{{libro.price}} €</h6>
-                    <a [ngClass]="even ? 'btn btn-success' : 'btn btn-danger'">Comprar</a>
-                </div>
-            </div>
+            <app-card [bookPadre]="libro" [even]="even" *ngFor="let libro of books; let even = even" (eventoElimina) = "eliminaLibro($event)"></app-card>
         </ng-container>
         <ng-template class="" #esFalso>
             <h1 class="text-black esFalso">Lo sentimos, no hay libros disponibles</h1>

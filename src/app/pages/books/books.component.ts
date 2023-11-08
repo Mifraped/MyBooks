@@ -25,4 +25,7 @@ export class BooksComponent {
     idLibro.value = ""
     idUsuario.value = ""
   }
+  public eliminaLibro(libro: Book):void{
+    this.books.splice(this.books.indexOf(libro),1)
+  }
 }
