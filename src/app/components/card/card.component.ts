@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Book } from 'src/app/models/book';
+import { BooksService } from 'src/app/shared/books.service';
 
 @Component({
   selector: 'app-card',
@@ -8,13 +9,16 @@ import { Book } from 'src/app/models/book';
 })
 export class CardComponent {
 
-  @Input() bookPadre: Book
+  @Input() libroPadre: Book
   @Input() even: boolean
 
-  @Output() eventoElimina = new EventEmitter<Book>()
+  @Output() eventoBusqueda = new EventEmitter<boolean>()
 
-  public elimina(elemento: Book){
-    this.eventoElimina.emit(elemento)
+  constructor(public bookService: BooksService){}
+
+  public salirBusqueda(){
+    let val = false
+    this.eventoBusqueda.emit(val)
   }
 
 }

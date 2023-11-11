@@ -1,16 +1,16 @@
 <div class="card" style="width: 18rem;">
     <div class="contFoto d-flex justify-content-center align-items-center">
         <div class="foto w-50">
-            <img src="{{bookPadre.photo}}" class="card-img-top" alt="Img">
+            <img src="{{libroPadre.photo}}" class="card-img-top" alt="Img">
         </div>
-        <button type="button" class="btn btn-danger eliminar" on-click="elimina(bookPadre)">X</button>
+        <button type="button" class="btn btn-dark eliminar" on-click="bookService.delete(libroPadre.id_book); salirBusqueda()">X</button>
     </div>
     <div class="card-body text-light d-flex flex-column">
-        <h5 class="card-title text-black fw-bold fs-5 text-center mb-3">{{bookPadre.title}}</h5>
-        <h6 class="card-text ms-3">{{bookPadre.author}}</h6>
-        <h6 class="card-text ms-3">{{bookPadre.type}}</h6>
-        <h6 class="card-text ms-3">{{bookPadre.id_book | ref}}</h6>
-        <h6 class="card-text align-self-center mt-1">{{bookPadre.price}} €</h6>
-        <a [ngClass]="even ? 'btn btn-success' : 'btn btn-danger'">Comprar</a>
+        <h5 class="card-title text-black fw-bold fs-5 text-center mb-3">{{libroPadre.title}}</h5>
+        <h6 class="card-text ms-3">{{libroPadre.author}}</h6>
+        <h6 class="card-text ms-3">{{libroPadre.type}}</h6>
+        <h6 class="card-text ms-3">{{libroPadre.id_book | ref}}</h6>
+        <h6 class="card-text align-self-center mt-1">{{libroPadre.price}} €</h6>
+        <a [ngClass]="even ? 'btn btn-success' : 'btn btn-secondary'">Comprar</a>
     </div>
 </div>

@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
+import { Book } from 'src/app/models/book';
+import { BooksService } from 'src/app/shared/books.service';
 
 @Component({
   selector: 'app-add-book',
@@ -7,6 +9,20 @@ import { Component } from '@angular/core';
 })
 export class AddBookComponent {
 
-  public anyade(titulo, genero, autor, precio, url, idLibro,){}
+  constructor(public bookService: BooksService){}
+
+  public anyade(titulo: HTMLInputElement, genero: HTMLInputElement, autor: HTMLInputElement, precio: HTMLInputElement, url: HTMLInputElement, idLibro: HTMLInputElement,){
+    if(titulo.value && genero.value && autor.value && precio.value && url.value && idLibro.value){
+      let nuevoLibro = new Book(titulo.value, genero.value, autor.value, Number(precio.value), url.value, Number(idLibro.value))
+      this.bookService.add(nuevoLibro)
+      titulo.value = ""
+      genero.value = ""
+      autor.value = ""
+      precio.value = ""
+      url.value = ""
+      idLibro.value = ""
+    }else alert("Faltan campos por rellenar")
+          
+  }
 
 }
