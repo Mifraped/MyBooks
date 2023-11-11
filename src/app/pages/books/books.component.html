@@ -1,23 +1,21 @@
 <div class="contPrinc">
-    <div class="contTarg">
-        <ng-container *ngIf="books.length > 0; else esFalso">
-            <app-card [bookPadre]="libro" [even]="even" *ngFor="let libro of books; let even = even" (eventoElimina) = "eliminaLibro($event)"></app-card>
-        </ng-container>
-        <ng-template class="" #esFalso>
-            <h1 class="text-black esFalso">Lo sentimos, no hay libros disponibles</h1>
-        </ng-template>
+    <div class="buscador">
+        <input type="text" placeholder="Busca un libro por su referencia" #ref>
+        <button type="button" class="btn btn-primary" (click)="buscaLibro(ref)">Buscar</button>
+        <button type="button" class="btn btn-primary" (click)="buscando = false">Mostrar todos</button>
     </div>
-    <div class="contForm d-flex justify-content-center">
-        <div class="formulario">
-            <h1 class="h1form">Introduce un nuevo libro</h1>
-            <input type="text" placeholder="Titulo" #titulo>
-            <input type="text" placeholder="Genero" #genero>
-            <input type="text" placeholder="Autor" #autor>
-            <input type="text" placeholder="Precio" #precio>
-            <input type="text" placeholder="Url de portada" #url>
-            <input type="text" placeholder="Identificador del libro" #idLibro>
-            <input type="text" placeholder="Identificador de usuario" #idUsuario>
-            <button type="button" on-click="anyade(titulo, genero, autor, precio, url, idLibro, idUsuario)">Añadir</button>
-        </div>
+    <div class="contTarg">
+        <ng-container *ngIf="!buscando; else otro">
+            <ng-container *ngIf="bookService.getAll().length > 0; else esFalso">
+                <app-card [libroPadre]="libro" [even]="even"
+                    *ngFor="let libro of bookService.getAll(); let even = even"></app-card>
+            </ng-container>
+            <ng-template #esFalso>
+                <h1 class="text-black esFalso">Lo sentimos, no hay libros disponibles</h1>
+            </ng-template>
+        </ng-container>
+        <ng-template #otro>
+            <app-card [libroPadre]="buscado" (eventoBusqueda) = "cambioBuscando($event)"></app-card>
+        </ng-template>
     </div>
 </div>
