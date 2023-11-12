@@ -12,13 +12,12 @@ export class CardComponent {
   @Input() libroPadre: Book
   @Input() even: boolean
 
-  @Output() eventoBusqueda = new EventEmitter<boolean>()
+  @Output() eventoBusqueda = new EventEmitter<void>()
 
   constructor(public bookService: BooksService){}
 
   public salirBusqueda(){
-    let val = false
-    this.eventoBusqueda.emit(val)
+    this.eventoBusqueda.emit()
   }
 
 }

@@ -37,9 +37,7 @@ export class BooksService {
 
   public delete(id_libro: number): boolean{
     let libro = this.books.find(elem => elem.id_book === id_libro)
-    this.books.splice((this.books.indexOf(libro)), 1) 
-    console.log("holi");
-    
+    this.books.splice((this.books.indexOf(libro)), 1)     
     return true
   }
 

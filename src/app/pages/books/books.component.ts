@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input, ViewChild } from '@angular/core';
 import { Book } from 'src/app/models/book';
 import { BooksService } from 'src/app/shared/books.service';
 
@@ -12,6 +12,8 @@ export class BooksComponent {
   public buscando: boolean = false
   public buscado: Book
 
+  @ViewChild("ref") ref:ElementRef
+
   constructor(public bookService: BooksService) { }
 
   public buscaLibro(inpRef: HTMLInputElement) {
@@ -22,7 +24,8 @@ export class BooksComponent {
     else alert(`No existe la referencia ${inpRef.value}`)
   }
 
-    public cambioBuscando(valor: boolean){
-      this.buscando = valor
+    public cambioBuscando(){
+      this.buscando = false
+      this.ref.nativeElement.value = ""
     }
 }
