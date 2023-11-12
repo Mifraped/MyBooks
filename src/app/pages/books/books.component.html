@@ -1,8 +1,8 @@
 <div class="contPrinc">
     <div class="buscador">
-        <input type="text" placeholder="Busca un libro por su referencia" #ref>
-        <button type="button" class="btn btn-primary" (click)="buscaLibro(ref)">Buscar</button>
-        <button type="button" class="btn btn-primary" (click)="buscando = false">Mostrar todos</button>
+        <input type="text" placeholder="Busca un libro por su referencia" #ref (input)="buscaLibro(ref)">
+        <img src="../../../assets/img/lupa.png" alt="img" id="lupa">
+        <button type="button" class="btn btn-primary" (click)="buscando = false; ref.value = ''">Mostrar todos</button>
     </div>
     <div class="contTarg">
         <ng-container *ngIf="!buscando; else otro">

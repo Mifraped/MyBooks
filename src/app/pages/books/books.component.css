@@ -14,7 +14,7 @@
     align-self: center;
     background-color: var(--grisTrans);
     height: 50px;
-    width: 700px;
+    width: 550px;
     padding: 50px;
     border-radius: 20px;
     margin-bottom: 80px;
@@ -33,7 +33,7 @@ input:focus{
 #lupa{
     width: 5%;
     position: absolute;
-    right: 117px;
+    right: 215px;
 }
 .contTarg{
     display: flex;
