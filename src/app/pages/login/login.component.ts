@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { User } from 'src/app/models/user';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-login',
@@ -7,4 +9,14 @@ import { Component } from '@angular/core';
 })
 export class LoginComponent {
 
+  public usuario: User
+
+  constructor(){
+    this.usuario = new User()
+  }
+
+  public mandaForm(formulario: NgForm){
+    console.log(this.usuario);
+    
+  }
 }
