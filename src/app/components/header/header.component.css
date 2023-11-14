@@ -23,3 +23,7 @@
             text-decoration: none;
             color: black;
         }
+        .active{
+            transform: scale(1.25);
+            text-decoration: underline 2px black;
+        }
