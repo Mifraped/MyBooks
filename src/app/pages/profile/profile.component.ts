@@ -10,7 +10,11 @@ export class ProfileComponent {
   public defaultUser: User
 
   constructor(){
-    this.defaultUser = new User(0, "Pepe", "Perez Rodriguez", "pepeperez@gmail.com", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVreRpQts-EFHcz_tP9nA28prohIR-WT5Y1A&usqp=CAU", "passWord")
+    this.defaultUser = new User()
+    this.defaultUser.name = "Pepe"
+    this.defaultUser.last_name = "Perez Rodriguez"
+    this.defaultUser.email = "pepeperez@gmail.com"
+    this.defaultUser.photo = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVreRpQts-EFHcz_tP9nA28prohIR-WT5Y1A&usqp=CAU"
   }
   public imprimeNombre(): void{
     console.log(this.defaultUser.name);
